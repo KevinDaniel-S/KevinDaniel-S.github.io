@@ -28,7 +28,8 @@ url: "https://kevindaniel-s.github.io" # the base hostname & protocol for your s
 github_username:  KevinDaniel-S
 
 # Build settings
-theme: minima
+
+#theme: minima
 plugins:
   - jekyll-feed
 
