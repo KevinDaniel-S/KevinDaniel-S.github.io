@@ -33,6 +33,7 @@ author: Kevin Daniel Sánchez Díaz
 # New fields
 copyright: "KevinDaniel-SD"
 title-logo: /images/title-logo.png
+excerpt_separator: <!--more-->
 
 # Build settings
 
