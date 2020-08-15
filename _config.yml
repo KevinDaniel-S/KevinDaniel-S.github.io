@@ -26,6 +26,13 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://kevindaniel-s.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 github_username:  KevinDaniel-S
+linkedin_username: kevin-daniel-sanchez-diaz
+facebook_username: KevinDanielSD
+author: Kevin Daniel Sánchez Díaz
+
+# New fields
+copyright: "KevinDaniel-SD"
+title-logo: /images/title-logo.png
 
 # Build settings
 
