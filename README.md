@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Mi blog
 
 You can use the [editor on GitHub](https://github.com/KevinDaniel-S/KevinDaniel-S.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
@@ -14,6 +14,8 @@ Syntax highlighted code block
 # Header 1
 ## Header 2
 ### Header 3
+
+<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
 
 - Bulleted
 - List
