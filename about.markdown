@@ -11,3 +11,5 @@ permalink: /about/
 
 Soy estudiante de 10º semestre en sistemas computacionales,
 estudiante autodidacta de datascience usando python.
+
+# [Certificados](/certificates.html)
