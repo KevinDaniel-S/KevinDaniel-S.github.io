@@ -197,6 +197,26 @@
   }
 }
 
+.flexbox {
+  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flexbox .col {
+  margin: 1%;
+  width: 30%;
+  flex-grow: 1;  
+}
+
+.flexbox .col:nth-child(odd) {
+  background: #BBCCBB;
+}
+.flexbox .col:nth-child(even) {
+  background: #CCBBCC;
+}
+
+
 .post-meta {
   font-size: $small-font-size;
   color: $grey-color;
