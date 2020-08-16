@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Proyecto de punta a punta"
+title:  "Proyecto de punta a punta (WIP)"
 date:   2020-08-16 15:04:00 -0500
 categories: Machine Learning
 ---
