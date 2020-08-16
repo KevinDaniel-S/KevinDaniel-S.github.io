@@ -30,7 +30,7 @@ housing.head()
 ```
 
 <div>
-<style scoped>
+  <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -43,6 +43,8 @@ housing.head()
         text-align: right;
     }
 </style>
+
+<div class="table-wrapper" markdown="block">
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -128,7 +130,7 @@ housing.head()
   </tbody>
 </table>
 </div>
-
+</div>
 
 
 
@@ -194,6 +196,7 @@ housing.describe()
         text-align: right;
     }
 </style>
+<div class="table-wrapper" markdown="block">
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -308,6 +311,7 @@ housing.describe()
     </tr>
   </tbody>
 </table>
+</div>
 </div>
 
 
@@ -768,6 +772,7 @@ housing_extra_attribs.head()
         text-align: right;
     }
 </style>
+<div class="table-wrapper" markdown="block">
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -859,7 +864,7 @@ housing_extra_attribs.head()
   </tbody>
 </table>
 </div>
-
+</div>
 
 
 
