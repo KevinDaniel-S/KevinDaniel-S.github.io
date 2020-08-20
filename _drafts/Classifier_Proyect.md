@@ -1,3 +1,13 @@
+---
+layout: post
+title:  "Proyecto Clasificación"
+date:   2020-08-19 19:35:00 -0500
+categories: Machine Learning
+---
+Proyecto de clasificación de números escritos a mano
+
+<!--more-->
+
 ```python
 import numpy as np
 import pandas as pd
@@ -10,14 +20,7 @@ from sklearn.datasets import fetch_openml
 mnist = fetch_openml('mnist_784', version=1)
 mnist.keys()
 ```
-
-
-
-
     dict_keys(['data', 'target', 'frame', 'feature_names', 'target_names', 'DESCR', 'details', 'categories', 'url'])
-
-
-
 
 ```python
 X, y = mnist["data"], mnist["target"]
@@ -43,7 +46,7 @@ plt.show()
 ```
 
 
-![png](output_3_0.png)
+![png](\images\classification\output_3_0.png)
 
 
 
@@ -99,7 +102,7 @@ plt.show()
 ```
 
 
-![png](output_8_0.png)
+![png](\images\classification\output_8_0.png)
 
 
 
@@ -357,7 +360,7 @@ plt.show()
 ```
 
 
-![png](output_32_0.png)
+![png](\images\classification\output_32_0.png)
 
 
 
@@ -378,7 +381,7 @@ plt.show()
 ```
 
 
-![png](output_33_0.png)
+![png](\images\classification\output_33_0.png)
 
 
 
@@ -444,7 +447,7 @@ plt.show()
 ```
 
 
-![png](output_40_0.png)
+![png](\images\classification\output_40_0.png)
 
 
 
@@ -494,7 +497,7 @@ plt.show()
 ```
 
 
-![png](output_44_0.png)
+![png](\images\classification\output_44_0.png)
 
 
 ## Clasificación multiclase
@@ -730,7 +733,7 @@ ax = sns.heatmap(conf_mx, cmap='gist_heat', linewidths=.5)
 ```
 
 
-![png](output_63_0.png)
+![png](\images\classification\output_63_0.png)
 
 
 
@@ -746,7 +749,7 @@ ax = sns.heatmap(norm_conf_mx, cmap='gist_heat', linewidths=.5)
 ```
 
 
-![png](output_65_0.png)
+![png](\images\classification\output_65_0.png)
 
 
 
@@ -766,7 +769,7 @@ plt.show()
 ```
 
 
-![png](output_66_0.png)
+![png](\images\classification\output_66_0.png)
 
 
 ## Clasificación multi-etiqueta
@@ -825,7 +828,7 @@ plt.show()
 ```
 
 
-![png](output_72_0.png)
+![png](\images\classification\output_72_0.png)
 
 
 
@@ -836,5 +839,5 @@ plot_digit(clean_digit)
 ```
 
 
-![png](output_73_0.png)
+![png](\images\classification\output_73_0.png)
 
