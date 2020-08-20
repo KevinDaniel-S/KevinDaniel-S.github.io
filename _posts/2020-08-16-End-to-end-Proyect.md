@@ -126,20 +126,102 @@ Información del conjunto de datos
 ```python
 housing.info()
 ```
+<div class="table-wrapper">
 
-|#|Column            |Non-Null Count|Dtype  |
-|-|:----------------:|:------------:|:-----:|
-|0|longitude         |20640 non-null|float64|
-|1|latitude          |20640 non-null|float64|
-|2|housing_median_age|20640 non-null|float64|
-|3|total_rooms       |20640 non-null|float64|
-|4|total_bedrooms    |20433 non-null|float64|
-|5|population        |20640 non-null|float64|
-|6|households        |20640 non-null|float64|
-|7|median_income     |20640 non-null|float64|
-|8|median_house_value|20640 non-null|float64|
-|9|ocean_proximity   |20640 non-null|object |
-||||       **dtypes**: float64(9), object(1)|
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-0lax">#</th>
+    <th class="tg-0lax">Column</th>
+    <th class="tg-0lax">Non-Null Count</th>
+    <th class="tg-0lax">Dtype</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">longitude</td>
+    <td class="tg-0lax">20640 non-null</td>
+    <td class="tg-0lax">float64</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">latitude</td>
+    <td class="tg-0lax">20640 non-null</td>
+    <td class="tg-0lax">float64</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">housing_median_age</td>
+    <td class="tg-0lax">20640 non-null</td>
+    <td class="tg-0lax">float64</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">3</td>
+    <td class="tg-0lax">total_rooms</td>
+    <td class="tg-0lax">20640 non-null</td>
+    <td class="tg-0lax">float64</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">4</td>
+    <td class="tg-0lax">total_bedrooms</td>
+    <td class="tg-0lax">20433 non-null</td>
+    <td class="tg-0lax">float64</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">5</td>
+    <td class="tg-0lax">population</td>
+    <td class="tg-0lax">20640 non-null</td>
+    <td class="tg-0lax">float64</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">households</td>
+    <td class="tg-0lax">20640 non-null</td>
+    <td class="tg-0lax">float64</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">7</td>
+    <td class="tg-0lax">median_income</td>
+    <td class="tg-0lax">20640 non-null</td>
+    <td class="tg-0lax">float64</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">8</td>
+    <td class="tg-0lax">median_house_value</td>
+    <td class="tg-0lax">20640 non-null</td>
+    <td class="tg-0lax">float64</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">9</td>
+    <td class="tg-0lax">ocean_proximity</td>
+    <td class="tg-0lax">20640 non-null</td>
+    <td class="tg-0lax">object</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax"><b>dtypes</b>: float64(9), object(1)</td>
+  </tr>
+</tbody>
+</table>
+
+</div>
 
 Podemos observar que la columna "total_bedrooms" tiene 207 valores nulos
 y la columna "ocean_proximity" es de tipo objeto, ya que leímos los datos
@@ -151,12 +233,52 @@ Veremos el contenido de la columna "ocean_proximity"
 housing['ocean_proximity'].value_counts()
 ```
 
-|<1H OCEAN |9136|
-|INLAND    |6551|
-|NEAR OCEAN|2658|
-|NEAR BAY  |2290|
-|ISLAND    |5   |
-|**Name**: ocean_proximity| **dtype**: int64 |    
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+
+<table class="tg">
+<tbody>
+  <tr>
+    <td>1H OCEAN</td>
+    <td>9136</td>
+  </tr>
+  <tr>
+    <td>INLAND</td>
+    <td>6551</td>
+  </tr>
+  <tr>
+    <td>NEAR OCEAN</td>
+    <td>2658</td>
+  </tr>
+  <tr>
+    <td>NEAR BAY</td>
+    <td>2290</td>
+  </tr>
+  <tr>
+    <td>ISLAND</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td><b>Name</b>: ocean_proximity</td>
+    <td><b>dtype</b>: int64</td>
+  </tr>
+</tbody>
+</table>
+
+</div>
 
 Al parecer la columna "ocean_proximity" es una variable categórica de
 5 niveles
@@ -330,12 +452,52 @@ housing["income_cat"] = pd.cut(housing["median_income"],
 housing["income_cat"].value_counts()
 ```
 
-|3|7236|
-|2|6581|
-|4|3639|
-|5|2362|
-|1| 822|
-|**Name**: income_cat| **dtype**: int64|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+
+<table>
+<tbody>
+  <tr>
+    <td>3</td>
+    <td>7236</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>6581</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>3639</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>2362</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>822</td>
+  </tr>
+  <tr>
+    <td><b>Name</b>: income_cat</td>
+    <td><b>dtype</b>: int64</td>
+  </tr>
+</tbody>
+</table>
+
+</div>
 
 Ahora crearemos separaremos el conjunto de pruebas usando la nueva
 columna categórica.
@@ -356,24 +518,102 @@ ingresos medios.
 strat_test_set["income_cat"].value_counts() / len(strat_test_set)
 ```
 
-|3|    0.350533|
-|2|    0.318798|
-|4|    0.176357|
-|5|    0.114583|
-|1|    0.039729|
-|Name: income_cat| dtype: float64|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+
+<table>
+<tbody>
+  <tr>
+    <td>3</td>
+    <td>0.350533</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>0.318798</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>0.176357</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>0.114583</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>0.039729</td>
+  </tr>
+  <tr>
+    <td><b>Name</b>: income_cat</td>
+    <td><b>dtype</b>: float64</td>
+  </tr>
+</tbody>
+</table>
+
+</div>
 
 ```python
 housing["income_cat"].value_counts() / len(housing)
 ```
 
-|3|0.350581|
-|2|0.318847|
-|4|0.176308|
-|5|0.114438|
-|1|0.039826|
-|Name: income_cat| dtype: float64|
+<div class="table-wrapper">
 
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+
+<table>
+<tbody>
+  <tr>
+    <td>3</td>
+    <td>0.350581</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>0.318847</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>0.176308</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>0.114438</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>0.039826</td>
+  </tr>
+  <tr>
+    <td><b>Name</b>: income_cat</td>
+    <td><b>dtype</b>: float64</td>
+  </tr>
+</tbody>
+</table>
+</div>
 Podemos observar que ambos conjuntos tienen una proporción similar.
 
 Procederemos a eliminar la columna categórica que creamos.
@@ -418,16 +658,68 @@ si es cercano a 1 significa que dos columnas tienen una correlación
 positiva, si el valor es 0 significa que no existe una correlación entre
 las dos columnas.
 
-|median_house_value | 1.000000|
-|median_income      | 0.687160|
-|total_rooms        | 0.135097|
-|housing_median_age | 0.114110|
-|households         | 0.064506|
-|total_bedrooms     | 0.047689|
-|population         |-0.026920|
-|longitude          |-0.047432|
-|latitude           |-0.142724|
-|Name: median_house_value| dtype: float64|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+
+<table>
+<tbody>
+  <tr>
+    <td>median_house_value</td>
+    <td>1.000000</td>
+  </tr>
+  <tr>
+    <td>median_income</td>
+    <td>0.687160</td>
+  </tr>
+  <tr>
+    <td>total_rooms</td>
+    <td>0.135097</td>
+  </tr>
+  <tr>
+    <td>housing_median_age</td>
+    <td>0.114110</td>
+  </tr>
+  <tr>
+    <td>households</td>
+    <td>0.064506</td>
+  </tr>
+  <tr>
+    <td>total_bedrooms</td>
+    <td>0.047689</td>
+  </tr>
+  <tr>
+    <td>population</td>
+    <td>-0.026920</td>
+  </tr>
+  <tr>
+    <td>longitude</td>
+    <td>-0.047432</td>
+  </tr>
+  <tr>
+    <td>latitude</td>
+    <td>-0.142724</td>
+  </tr>
+  <tr>
+    <td>Name: median_house_value</td>
+    <td>dtype: float64</td>
+  </tr>
+</tbody>
+</table>
+
+</div>
 
 Ya que "median_house_value" es la columna que estamos evaluando da 1
 exacto, la columna que tiene una mayor correlación es "median_income"
@@ -484,19 +776,78 @@ corr_matrix = housing.corr()
 corr_matrix["median_house_value"].sort_values(ascending=False)
 ```
 
-|median_house_value      | 1.000000|
-|median_income           | 0.687160|
-|rooms_per_household     | 0.146285|
-|total_rooms             | 0.135097|
-|housing_median_age      | 0.114110|
-|households              | 0.064506|
-|total_bedrooms          | 0.047689|
-|population_per_household|-0.021985|
-|population              |-0.026920|
-|longitude               |-0.047432|
-|latitude                |-0.142724|
-|bedrooms_per_room       |-0.259984|
-|Name: median_house_value| dtype: float64|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<tbody>
+  <tr>
+    <td>median_house_value</td>
+    <td>1.000000</td>
+  </tr>
+  <tr>
+    <td>median_income</td>
+    <td>0.687160</td>
+  </tr>
+  <tr>
+    <td>rooms_per_household</td>
+    <td>0.146285</td>
+  </tr>
+  <tr>
+    <td>total_rooms</td>
+    <td>0.135097</td>
+  </tr>
+  <tr>
+    <td>housing_median_age</td>
+    <td>0.114110</td>
+  </tr>
+  <tr>
+    <td>households</td>
+    <td>0.064506</td>
+  </tr>
+  <tr>
+    <td>total_bedrooms</td>
+    <td>0.047689</td>
+  </tr>
+  <tr>
+    <td>population_per_household</td>
+    <td>-0.021985</td>
+  </tr>
+  <tr>
+    <td>population</td>
+    <td>-0.026920</td>
+  </tr>
+  <tr>
+    <td>longitude</td>
+    <td>-0.047432</td>
+  </tr>
+  <tr>
+    <td>latitude</td>
+    <td>-0.142724</td>
+  </tr>
+  <tr>
+    <td>bedrooms_per_room</td>
+    <td>-0.259984</td>
+  </tr>
+  <tr>
+    <td><b>Name</b>: median_house_value</td>
+    <td><b>dtype</b>: float64</td>
+  </tr>
+</tbody>
+</table>
+</div>
 
 
 
@@ -544,7 +895,36 @@ Valores que usará el imputer para rellenar las columnas
 imputer.statistics_
 ```
 
-|-118.51|34.26|29.0|2119.5|433.0|1164.0|408.0|3.5409|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<thead>
+  <tr>
+    <td>-118.51</td>
+    <td>34.26</td>
+    <td>29.0</td>
+    <td>2119.5</td>
+    <td>433.0</td>
+    <td>1164.0</td>
+    <td>408.0</td>
+    <td>3.5409</td>
+  </tr>
+</thead>
+</table>
+</div>
 
 Aplicaremos el imputer
 
@@ -846,9 +1226,44 @@ print("Predictions:", lin_reg.predict(some_data_prepared))
 print("Labels:", list(some_labels))
 ```
 
-|Predictions|210644.60|317768.80|210956.43|59218.98|189747.55|
-|Labels     |286600.00|340600.00|196900.00|46300.00|254500.00|
+<div class="table-wrapper">
 
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<thead>
+  <tr>
+    <th>Predictions</th>
+    <td>210644.60</td>
+    <td>317768.80</td>
+    <td>210956.43</td>
+    <td>59218.98</td>
+    <td>189747.55</td>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <th>Labels</th>
+    <td>286600.00</td>
+    <td>340600.00</td>
+    <td>196900.00</td>
+    <td>46300.00</td>
+    <td>254500.00</td>
+  </tr>
+</tbody>
+</table>
+</div>
 Ahora que tenemos tanto los valores predichos como los valores reales
 usaremos algunas métricas para evaluar el rendimiento del modelo
 
@@ -862,7 +1277,30 @@ lin_mse = mean_squared_error(housing_labels, housing_predictions)
 lin_rmse = np.sqrt(lin_mse)
 ```
 
-|lin_rmse|68628.19|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<thead>
+  <tr>
+    <th>lin_rmse</th>
+    <td>68628.19</td>
+  </tr>
+</thead>
+</table>
+</div>
 
 Ahora probaremos con el error medio absoluto
 
@@ -872,7 +1310,30 @@ from sklearn.metrics import mean_absolute_error
 lin_mae = mean_absolute_error(housing_labels, housing_predictions)
 ```
 
-|lin_mae|49439.89|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+  <table>
+<thead>
+  <tr>
+    <th>lin_mae</th>
+    <td>49439.89</td>
+  </tr>
+</thead>
+</table>
+</div>
 
 Ahora probaremos un árbol de decisión 
 
@@ -891,7 +1352,30 @@ tree_mse = mean_squared_error(housing_labels, housing_predictions)
 tree_rmse = np.sqrt(tree_mse)
 ```
 
-|tree_rmse|0.0|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<thead>
+  <tr>
+    <th>tree_rmse</th>
+    <td>0.00</td>
+  </tr>
+</thead>
+</table>
+</div>
 
 El cuadrado medio nos dio un resultado 0, lo cual significa que el modelo
 acertó todas las predicciones, sin embargo esto puede implicar que el 
@@ -925,10 +1409,58 @@ def display_scores(scores):
 display_scores(tree_rmse_scores)
 ```
 
-|Scores  |70194.33|66855.16|72432.58|70758.73|71115.88|
-|        |75585.14|70262.86|70273.63|75366.87|71231.65|
-|Mean    |71407.68|
-|Standard deviation|2439.43|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<tbody>
+  <tr>
+    <th>Scores</th>
+    <td>70194.33</td>
+    <td>66855.16</td>
+    <td>72432.58</td>
+    <td>70758.73</td>
+    <td>71115.88</td>
+  </tr>
+  <tr>
+    <th></th>
+    <td>75585.14</td>
+    <td>70262.86</td>
+    <td>70273.63</td>
+    <td>75366.87</td>
+    <td>71231.65</td>
+  </tr>
+  <tr>
+    <th>Mean</th>
+    <td>71407.68</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>Standard deviation</th>
+    <td>2439.43</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</tbody>
+</table>
+</div>
 
 Haremos lo mismo con la regresión lineal
 
@@ -939,11 +1471,58 @@ lin_rmse_scores = np.sqrt(-lin_scores)
 display_scores(lin_rmse_scores)
 ```
 
-|Scores|66782.73|66960.11|70347.95|74739.57|68031.13|
-|      |71193.84|64969.63|68281.61|71552.91|67665.10|
-|Mean  |69052.46|
-|Standard deviation|2731.67|
+<div class="table-wrapper">
 
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<tbody>
+  <tr>
+    <th>Scores</th>
+    <td>66782.73</td>
+    <td>66960.11</td>
+    <td>70347.95</td>
+    <td>74739.57</td>
+    <td>68031.13</td>
+  </tr>
+  <tr>
+    <th></th>
+    <td>71193.84</td>
+    <td>64969.63</td>
+    <td>68281.61</td>
+    <td>71552.91</td>
+    <td>67665.10</td>
+  </tr>
+  <tr>
+    <th>Mean</th>
+    <td>69052.46</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>Standard deviation</th>
+    <td>2731.67</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</tbody>
+</table>
+</div>
 Ahora probaremos un bosque aleatorio
 
 ```python
@@ -959,7 +1538,30 @@ forest_mse = mean_squared_error(housing_labels, housing_predictions)
 forest_rmse = np.sqrt(forest_mse)
 ```
 
-|forest_rmse|18603.515021376355|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<tbody>
+  <tr>
+    <th>forest_rmse</th>
+    <td>18603.51</td>
+  </tr>
+</tbody>
+</table>
+</div>
 
 
 ```python
@@ -971,10 +1573,58 @@ forest_rmse_scores = np.sqrt(-forest_scores)
 display_scores(forest_rmse_scores)
 ```
 
-|Scores|49519.80|47461.91|50029.02|52325.28|49308.39|
-|      |53446.37|48634.80|47585.73|53490.10|50021.58|
-|Mean  |50182.30|
-|Standard deviation|2097.08|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<tbody>
+  <tr>
+    <th>Scores</th>
+    <td>49519.80</td>
+    <td>47461.91</td>
+    <td>50029.02</td>
+    <td>52325.28</td>
+    <td>49308.39</td>
+  </tr>
+  <tr>
+    <th></th>
+    <td>53446.37</td>
+    <td>48634.80</td>
+    <td>47585.73</td>
+    <td>53490.10</td>
+    <td>50021.58</td>
+  </tr>
+  <tr>
+    <th>Mean</th>
+    <td>50182.30</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>Standard deviation</th>
+    <td>2097.08</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</tbody>
+</table>
+</div>
 
 Parece ser que el modelo que mejor rindió fue el del bosque aleatorio
 
@@ -1006,10 +1656,38 @@ Ahora veremos cual es la mejor combinación de hyper-parametros
 grid_search.best_params_
 ```
 
-|max_features|8   |
-|n_estimators|30  |
-|bootstrap   |True|
+<div class="table-wrapper">
 
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<tbody>
+  <tr>
+    <th>max_features</th>
+    <td>8</td>
+  </tr>
+  <tr>
+    <th>n_estimators</th>
+    <td>30</td>
+  </tr>
+  <tr>
+    <th>bootstrap</th>
+    <td>True</td>
+  </tr>
+</tbody>
+</table>
+</div>
 Calcularemos el error medio cuadrado para cada combinación de hyper-parametros
 para verificar que la combinación sea correcta
 
@@ -1019,26 +1697,142 @@ for mean_score, params in zip(cvres["mean_test_score"], cvres["params"]):
     print(np.sqrt(-mean_score), params)
 ```
 
-|mean_squared_error|bootstrap|max_features|n_estimators|
-|:----------------:|:-------:|:----------:|:----------:|
-|63669.11          |True     |2           |3           |
-|55627.09          |True     |2           |10          |
-|53384.57          |True     |2           |30          |
-|60965.95          |True     |4           |3           |
-|52741.04          |True     |4           |10          |
-|50377.40          |True     |4           |30          |
-|58663.93          |True     |6           |3           |
-|52006.19          |True     |6           |10          |
-|50146.51          |True     |6           |30          |
-|57869.25          |True     |8           |3           |
-|51711.12          |True     |8           |10          |
-|49682.27          |True     |8           |30          |
-|62895.06          |False    |2           |3           |
-|54658.17          |False    |2           |10          |
-|59470.40          |False    |3           |3           |
-|52724.98          |False    |3           |10          |
-|57490.56          |False    |4           |3           |
-|51009.49          |False    |4           |10          |
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<thead>
+  <tr>
+    <th>mean_squared_error</th>
+    <th>bootstrap</th>
+    <th>max_features</th>
+    <th>n_estimators</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>63669.11</td>
+    <td>True</td>
+    <td>2</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>55627.09</td>
+    <td>True</td>
+    <td>2</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td>53384.57</td>
+    <td>True</td>
+    <td>2</td>
+    <td>30</td>
+  </tr>
+  <tr>
+    <td>60965.95</td>
+    <td>True</td>
+    <td>4</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>52741.04</td>
+    <td>True</td>
+    <td>4</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td>50377.40</td>
+    <td>True</td>
+    <td>4</td>
+    <td>30</td>
+  </tr>
+  <tr>
+    <td>58663.93</td>
+    <td>True</td>
+    <td>6</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>52006.19</td>
+    <td>True</td>
+    <td>6</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td>50146.51</td>
+    <td>True</td>
+    <td>6</td>
+    <td>30</td>
+  </tr>
+  <tr>
+    <td>57869.25</td>
+    <td>True</td>
+    <td>8</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>51711.12</td>
+    <td>True</td>
+    <td>8</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td>49682.27</td>
+    <td>True</td>
+    <td>8</td>
+    <td>30</td>
+  </tr>
+  <tr>
+    <td>62895.06</td>
+    <td>False</td>
+    <td>2</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>54658.17</td>
+    <td>False</td>
+    <td>2</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td>59470.40</td>
+    <td>False</td>
+    <td>3</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>52724.98</td>
+    <td>False</td>
+    <td>3</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td>57490.56</td>
+    <td>False</td>
+    <td>4</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>51009.49</td>
+    <td>False</td>
+    <td>4</td>
+    <td>10</td>
+  </tr>
+</tbody>
+</table>
+</div>
 
 Ahora buscaremos las columnas que aportan más al modelo, en otras palabras,
 las columnas que afectan más al precio de una vivienda
@@ -1047,11 +1841,54 @@ las columnas que afectan más al precio de una vivienda
 feature_importances = grid_search.best_estimator_.feature_importances_
 feature_importances
 ```
+<div class="table-wrapper">
 
-|feature_importances|7.334e-02|6.290e-02|4.114e-02|1.467e-02|
-|                   |1.410e-02|1.487e-02|1.425e-02|3.661e-01|
-|                   |5.641e-02|1.087e-01|5.335e-02|1.031e-02|
-|                   |1.647e-01|6.028e-05|1.960e-03|2.856e-03|
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<tbody>
+  <tr>
+    <th>feature_importances</th>
+    <td>7.334e-02</td>
+    <td>6.290e-02</td>
+    <td>4.114e-02</td>
+    <td>1.467e-02</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>1.410e-02</td>
+    <td>1.487e-02</td>
+    <td>1.425e-02</td>
+    <td>3.661e-01</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>5.641e-02</td>
+    <td>1.087e-01</td>
+    <td>5.335e-02</td>
+    <td>1.031e-02</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>1.647e-01</td>
+    <td>6.028e-05</td>
+    <td>1.960e-03</td>
+    <td>2.856e-03</td>
+  </tr>
+</tbody>
+</table>
+</div>
 
 Obtuvimos lo que afecta cada columna en el precio, sin embargo nos falta
 anotar cada columna con su valor.
@@ -1065,22 +1902,90 @@ attributes = num_attribs + extra_attribs + cat_one_hot_attribs
 sorted(zip(feature_importances, attributes), reverse=True)
 ```
 
-|0.3661    |median_income     |
-|0.1647    |INLAND            |
-|0.1087    |pop_per_hhold     |
-|0.0733    |longitude         |
-|0.0629    |latitude          |
-|0.0564    |rooms_per_hhold   |
-|0.0533    |bedrooms_per_room |
-|0.0411    |housing_median_age|
-|0.0148    |population        |
-|0.0146    |total_rooms       |
-|0.0142    |households        |
-|0.0141    |total_bedrooms    |
-|0.0103    |<1H OCEAN         |
-|0.0028    |NEAR OCEAN        |
-|0.0019    |NEAR BAY          |
-|6.0280e-05|ISLAND            |
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<tbody>
+  <tr>
+    <td>0.3661</td>
+    <td>median_income</td>
+  </tr>
+  <tr>
+    <td>0.1647</td>
+    <td>INLAND</td>
+  </tr>
+  <tr>
+    <td>0.1087</td>
+    <td>pop_per_hhold</td>
+  </tr>
+  <tr>
+    <td>0.0733</td>
+    <td>longitude</td>
+  </tr>
+  <tr>
+    <td>0.0629</td>
+    <td>latitude</td>
+  </tr>
+  <tr>
+    <td>0.0564</td>
+    <td>rooms_per_hhold</td>
+  </tr>
+  <tr>
+    <td>0.0533</td>
+    <td>bedrooms_per_room</td>
+  </tr>
+  <tr>
+    <td>0.0411</td>
+    <td>housing_median_age</td>
+  </tr>
+  <tr>
+    <td>0.0148</td>
+    <td>population</td>
+  </tr>
+  <tr>
+    <td>0.0146</td>
+    <td>total_rooms</td>
+  </tr>
+  <tr>
+    <td>0.0142</td>
+    <td>households</td>
+  </tr>
+  <tr>
+    <td>0.0141</td>
+    <td>total_bedrooms</td>
+  </tr>
+  <tr>
+    <td>0.0103</td>
+    <td>&lt;1H OCEAN</td>
+  </tr>
+  <tr>
+    <td>0.0028</td>
+    <td>NEAR OCEAN</td>
+  </tr>
+  <tr>
+    <td>0.0019</td>
+    <td>NEAR BAY</td>
+  </tr>
+  <tr>
+    <td>6.0280e-05</td>
+    <td>ISLAND</td>
+  </tr>
+</tbody>
+</table>
+</div>
 
 Ahora probaremos nuestro modelo con el conjunto de pruebas que separamos en 
 un principio
@@ -1098,7 +2003,30 @@ final_mse = mean_squared_error(y_test, final_predictions)
 final_rmse = np.sqrt(final_mse)
 ```
 
-|final_rmse|47730.22|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<tbody>
+  <tr>
+    <th>final_rmse</th>
+    <td>47730.22</td>
+  </tr>
+</tbody>
+</table>
+</div>
 
 El resultado final nos dice que nuestro modelo puede predecir el valor de una 
 casa en California con un margen de error de $47,730.22
