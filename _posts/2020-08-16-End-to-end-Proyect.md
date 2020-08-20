@@ -2030,3 +2030,5 @@ final_rmse = np.sqrt(final_mse)
 
 El resultado final nos dice que nuestro modelo puede predecir el valor de una 
 casa en California con un margen de error de $47,730.22
+
+Para ver el repositorio completo [¡Click aquí!](https://github.com/KevinDaniel-S/MachineLearning/tree/master/Proyecto%20de%20Punta%20a%20punta)

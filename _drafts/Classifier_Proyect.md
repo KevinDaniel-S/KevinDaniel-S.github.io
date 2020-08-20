@@ -4,23 +4,17 @@ title:  "Proyecto Clasificación"
 date:   2020-08-19 19:35:00 -0500
 categories: Machine Learning
 ---
-Proyecto de clasificación de números escritos a mano
+Modelo de machine learning que distingue números escritos a mano
 
 <!--more-->
-
-```python
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-```
-
 
 ```python
 from sklearn.datasets import fetch_openml
 mnist = fetch_openml('mnist_784', version=1)
 mnist.keys()
 ```
-    dict_keys(['data', 'target', 'frame', 'feature_names', 'target_names', 'DESCR', 'details', 'categories', 'url'])
+
+|dict_keys|data|target|frame|feature_names|target_names|DESCR|details|categories|url|
 
 ```python
 X, y = mnist["data"], mnist["target"]
@@ -28,8 +22,8 @@ print(X.shape)
 print(y.shape)
 ```
 
-    (70000, 784)
-    (70000,)
+|X.shape|(70000,784)|
+|y.shape|(70000,)|
 
 
 
@@ -45,27 +39,13 @@ plt.axis("off")
 plt.show()
 ```
 
-
 ![png](\images\classification\output_3_0.png)
 
-
-
-```python
-y[0]
-```
-
-
-
-
-    '5'
-
-
-
+|y[0]|'5'|
 
 ```python
 y = y.astype(np.uint8)
 ```
-
 
 ```python
 def plot_digit(data):
@@ -126,9 +106,6 @@ sgd_clf = SGDClassifier(max_iter=1000, tol=1e-3, random_state=42)
 sgd_clf.fit(X_train, y_train_5)
 ```
 
-
-
-
     SGDClassifier(alpha=0.0001, average=False, class_weight=None,
                   early_stopping=False, epsilon=0.1, eta0=0.0, fit_intercept=True,
                   l1_ratio=0.15, learning_rate='optimal', loss='hinge',
@@ -136,19 +113,7 @@ sgd_clf.fit(X_train, y_train_5)
                   power_t=0.5, random_state=42, shuffle=True, tol=0.001,
                   validation_fraction=0.1, verbose=0, warm_start=False)
 
-
-
-
-```python
-sgd_clf.predict([some_digit])
-```
-
-
-
-
-    array([ True])
-
-
+|sgd_clf.predict([some_digit])|array([ True])|
 
 # Medir el rendimiento
 
@@ -171,10 +136,9 @@ for train_index, test_index in skfolds.split(X_train, y_train_5):
     print(n_correct / len(y_pred))
 ```
 
-    0.9669
-    0.91625
-    0.96785
-
+|0.9669|
+|0.91625|
+|0.96785|
 
 
 ```python
@@ -182,13 +146,7 @@ from sklearn.model_selection import cross_val_score
 cross_val_score(sgd_clf, X_train, y_train_5, cv=3, scoring="accuracy")
 ```
 
-
-
-
-    array([0.95035, 0.96035, 0.9604 ])
-
-
-
+|0.95035|0.96035|0.9604|
 
 ```python
 from sklearn.base import BaseEstimator
@@ -206,12 +164,7 @@ never_5_clf = Never5Classifier()
 cross_val_score(never_5_clf, X_train, y_train_5, cv=3, scoring="accuracy")
 ```
 
-
-
-
-    array([0.91125, 0.90855, 0.90915])
-
-
+|0.91125|0.90855|0.90915|
 
 ## Matriz de confusión
 
@@ -229,13 +182,8 @@ from sklearn.metrics import confusion_matrix
 confusion_matrix(y_train_5, y_train_pred)
 ```
 
-
-
-
-    array([[53892,   687],
-           [ 1891,  3530]])
-
-
+|53892|687|
+|1891|3530|
 
 ## Precision and Recall
 
@@ -246,25 +194,13 @@ from sklearn.metrics import precision_score, recall_score
 precision_score(y_train_5, y_train_pred) # = 3530 / (3530 + 687)
 ```
 
-
-
-
     0.8370879772350012
-
-
-
 
 ```python
 recall_score(y_train_5, y_train_pred) # = 3530 / (3530 + 1891)
 ```
 
-
-
-
     0.6511713705958311
-
-
-
 
 ```python
 from sklearn.metrics import f1_score
@@ -272,12 +208,7 @@ from sklearn.metrics import f1_score
 f1_score(y_train_5, y_train_pred)
 ```
 
-
-
-
     0.7325171197343846
-
-
 
 ## Precision/Recall Tradeoff
 
@@ -287,13 +218,7 @@ y_scores = sgd_clf.decision_function([some_digit])
 y_scores
 ```
 
-
-
-
-    array([2164.22030239])
-
-
-
+|2164.22030239|
 
 ```python
 threshold = 0
@@ -301,13 +226,7 @@ y_some_digit_pred = (y_scores > threshold)
 y_some_digit_pred
 ```
 
-
-
-
-    array([ True])
-
-
-
+|True|
 
 ```python
 threshold = 8000
@@ -315,12 +234,7 @@ y_some_digit_pred = (y_scores > threshold)
 y_some_digit_pred
 ```
 
-
-
-
-    array([False])
-
-
+|False|
 
 
 ```python
@@ -328,13 +242,11 @@ y_scores = cross_val_predict(sgd_clf, X_train, y_train_5, cv=3,
                              method="decision_function")
 ```
 
-
 ```python
 from sklearn.metrics import precision_recall_curve
 
 precisions, recalls, thresholds = precision_recall_curve(y_train_5, y_scores)
 ```
-
 
 ```python
 def plot_precision_recall_vs_threshold(precisions, recalls, thresholds):
@@ -841,3 +753,4 @@ plot_digit(clean_digit)
 
 ![png](\images\classification\output_73_0.png)
 
+Para ver el repositorio completo [¡Click aquí!](https://github.com/KevinDaniel-S/MachineLearning/tree/master/Proyecto%20de%20clasificaci%C3%B3n)
