@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Proyecto Clasificación"
-date:   2020-08-19 19:35:00 -0500
+date:   2020-08-20 13:09:00 -0500
 categories: Machine Learning
 ---
 Modelo de machine learning que distingue números escritos a mano de un conjunto de
