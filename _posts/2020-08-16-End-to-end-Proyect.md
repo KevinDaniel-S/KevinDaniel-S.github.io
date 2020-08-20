@@ -754,9 +754,9 @@ housing.plot(kind="scatter", x="median_income", y="median_house_value",
 Esta gráfica revela unas cuantas cosas. Primero, la correlación es muy
 fuerte; puedes ver claramente la tendencia y los puntos no están muy
 dispersos. Segundo, el límite de precio es claramente visible como
-una línea horizontal a los \$500,000, pero también se revelan otras
-líneas menos obvias: una línea horizontal alrededor de \$450,000,
-otra alrededor de \$350,000, y tal vez una alrededor de \$280,000
+una línea horizontal a los \\$500,000, pero también se revelan otras
+líneas menos obvias: una línea horizontal alrededor de \\$450,000,
+otra alrededor de \\$350,000, y tal vez una alrededor de \\$280,000
 y algunas debajo de eso.
 
 ## Experimentar con combinaciones de atributos
