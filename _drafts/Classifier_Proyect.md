@@ -18,7 +18,39 @@ mnist = fetch_openml('mnist_784', version=1)
 mnist.keys()
 ```
 
-|dict_keys|data|target|frame|feature_names|target_names|DESCR|details|categories|url|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+
+<table>
+<tbody>
+  <tr>
+    <td>dict_keys</td>
+    <td>data</td>
+    <td>target</td>
+    <td>frame</td>
+    <td>feature_names</td>
+    <td>target_names</td>
+    <td>DESCR</td>
+    <td>details</td>
+    <td>categories</td>
+    <td>url</td>
+  </tr>
+</tbody>
+</table>
+</div>
 
 Separaremos los vectores que contienen la información de cada imagen de la etiqueta que
 los identifica.
@@ -29,8 +61,34 @@ print(X.shape)
 print(y.shape)
 ```
 
-|X.shape|(70000,784)|
-|y.shape|(70000,)|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<tbody>
+  <tr>
+    <th>X.shape</th>
+    <td>(70000,784)</td>
+  </tr>
+  <tr>
+    <th>y.shape</th>
+    <td>(70000,)</td>
+  </tr>
+</tbody>
+</table>
+</div>
 
 Ya que cada imagen está en forma de vector, podemos redimensionarlo de tal forma 
 que tenga las proporciones adecuadas, en este caso es una matriz 28x28, una vez
@@ -53,7 +111,30 @@ plt.show()
 En este caso parece ser un 5, si le preguntamos al conjunto de datos por su valor,
 podemos verificar su valor.
 
-|y[0]|'5'|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<tbody>
+  <tr>
+    <th>y[0]</th>
+    <td>'5'</td>
+  </tr>
+</tbody>
+</table>
+</div>
 
 Al parecer realmente era un 5, pero está en un formato de cadena texto, para
 facilitarnos las cosas pasaremos las etiquetas "y" a números enteros.
@@ -132,7 +213,30 @@ sgd_clf.fit(X_train, y_train_5)
 
 Ahora que lo tenemos entrenado podemos probarlo con el número que ya conocemos.
 
-|sgd_clf.predict([some_digit])|array([ True])|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<tbody>
+  <tr>
+    <th>sgd_clf.predict([some_digit])</th>
+    <td>True</td>
+  </tr>
+</tbody>
+</table>
+</div>
 
 Al parecer lo identificó correctamente como un 5
 
@@ -149,7 +253,31 @@ from sklearn.model_selection import cross_val_score
 cross_val_score(sgd_clf, X_train, y_train_5, cv=3, scoring="accuracy")
 ```
 
-|0.95035|0.96035|0.9604|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<tbody>
+  <tr>
+    <td>0.95035</td>
+    <td>0.96035</td>
+    <td>0.9604</td>
+  </tr>
+</tbody>
+</table>
+</div>
 
 Al parecer acertó más del 95% de veces en las tres ocasiones que se probó el
 modelo, sin embargo no podemos emocionarnos tan fácilmente, antes tenemos que
@@ -172,7 +300,31 @@ never_5_clf = Never5Classifier()
 cross_val_score(never_5_clf, X_train, y_train_5, cv=3, scoring="accuracy")
 ```
 
-|0.91125|0.90855|0.90915|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<tbody>
+  <tr>
+    <td>0.91125</td>
+    <td>0.90855</td>
+    <td>0.90915</td>
+  </tr>
+</tbody>
+</table>
+</div>
 
 
 Al parecer acertó más del 90% de ocasiones, solo fallando cuando el número realmente vale
@@ -198,9 +350,43 @@ from sklearn.metrics import confusion_matrix
 confusion_matrix(y_train_5, y_train_pred)
 ```
 
-|Real\Predicción|No 5|5|
-|No 5|53892|687|
-|5|1891|3530|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<thead>
+  <tr>
+    <th>Real\Predicción</th>
+    <th>No 5</th>
+    <th>5</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <th>No 5</th>
+    <td>53892</td>
+    <td>687</td>
+  </tr>
+  <tr>
+    <th>5</th>
+    <td>1891</td>
+    <td>3530</td>
+  </tr>
+</tbody>
+</table>
+</div>
 
 La primera fila representa a los números que no son 5, mientras que la segunda fila
 representa a los números que sí son 5; La primera columna representa los  números que 
@@ -232,13 +418,60 @@ de predicciones positivas serían 3530 + 687
 from sklearn.metrics import precision_score, recall_score
 ```
 
-|precision_score(y_train_5, y_train_pred)|0.837|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<tbody>
+  <tr>
+    <th>precision_score(y_train_5, y_train_pred)</th>
+    <td>0.837</td>
+  </tr>
+</tbody>
+</table>
+</div>
+
 
 La exhaustividad se calcula como el número de positivos verdaderos sobre el total de
 positivos, en este caso los positivos verdaderos serían 3530, mientras que el total de
 positivos serían 3530 + 1891
 
-|recall_score(y_train_5, y_train_pred)|0.651|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<tbody>
+  <tr>
+    <th>recall_score(y_train_5, y_train_pred)</th>
+    <td>0.651</td>
+  </tr>
+</tbody>
+</table>
+</div>
 
 Es común combinar ambas métricas en una sola llamada F<sub>1</sub>, consiste en la media
 armonica entre las dos métricas.
@@ -249,7 +482,30 @@ armonica entre las dos métricas.
 from sklearn.metrics import f1_score
 ```
 
-|f1_score(y_train_5, y_train_pred)|0.732|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<tbody>
+  <tr>
+    <th>f1_score(y_train_5, y_train_pred)</th>
+    <td>0.732</td>
+  </tr>
+</tbody>
+</table>
+</div>
 
 El puntaje F<sub>1</sub> beneficia a aquellos modelos que tienen precisión y
 exhaustividad similares, sin embargo en algunos contextos te interesa más la
@@ -273,7 +529,31 @@ Probemos esto con el dígito que ya conocemos, primero veremos su puntaje
 y_scores = sgd_clf.decision_function([some_digit])
 ```
 
-|y_scores|2164.22030239|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<tbody>
+  <tr>
+    <th>y_scores</th>
+    <td>2164.22030239</td>
+  </tr>
+</tbody>
+</table>
+</div>
+
 
 Ahora modificamos el umbral para que sea igual a 0 y miraremos como lo clasifica
 
@@ -282,7 +562,30 @@ threshold = 0
 y_some_digit_pred = (y_scores > threshold)
 ```
 
-|y_some_digit_pred|True|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<tbody>
+  <tr>
+    <th>y_some_digit_pred</th>
+    <td>True</td>
+  </tr>
+</tbody>
+</table>
+</div>
 
 Lo clasificó como positivo
 
@@ -293,7 +596,30 @@ threshold = 8000
 y_some_digit_pred = (y_scores > threshold)
 ```
 
-|y_some_digit_pred|False|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<tbody>
+  <tr>
+    <th>y_some_digit_pred</th>
+    <td>False</td>
+  </tr>
+</tbody>
+</table>
+</div>
 
 Ya que el puntaje es menor que el umbral entonces lo clasificó como negativo
 
@@ -379,7 +705,30 @@ precisos, buscaremos el umbral más bajo que nos de al menos 90% de precisión
 threshold_90_precision = thresholds[np.argmax(precisions >= 0.90)]
 ```
 
-|threshold_90_precision|7816|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<tbody>
+  <tr>
+    <th>threshold_90_precision</th>
+    <td>7816</td>
+  </tr>
+</tbody>
+</table>
+</div>
 
 Ahora haremos las predicciones
 
@@ -390,8 +739,34 @@ y_train_pred_90 = (y_scores >= threshold_90_precision)
 Miraremos cuales son los puntajes de la precisión y de la exhaustividad con ese
 umbral
 
-|precision_score(y_train_5, y_train_pred_90)|0.90003|
-|recall_score(y_train_5, y_train_pred_90)|0.47998|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<tbody>
+  <tr>
+    <th>precision_score(y_train_5, y_train_pred_90)</th>
+    <td>0.90003</td>
+  </tr>
+  <tr>
+    <th>recall_score(y_train_5, y_train_pred_90)</th>
+    <td>0.47998</td>
+  </tr>
+</tbody>
+</table>
+</div>
 
 Podemos observar que nuestra precisión llegó a 90% satisfactoriamente.
 
@@ -442,8 +817,31 @@ mientras que en un clasificador aleatorio será aproximadamente 0.5.
 ```python
 from sklearn.metrics import roc_auc_score
 ```
+<div class="table-wrapper">
 
-|roc_auc_score(y_train_5, y_scores)|0.9604938554008616|
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<tbody>
+  <tr>
+    <th>roc_auc_score(y_train_5, y_scores)</th>
+    <td>0.9604938554008616</td>
+  </tr>
+</tbody>
+</table>
+</div>
+
 
 Vamos a entrenar un clasificador de bosque aleatorio y compararemos con la curva ROC
 y el ROC AUC del clasificador SGD.
@@ -469,7 +867,7 @@ y_scores_forest = y_probas_forest[:, 1]
 fpr_forest, tpr_forest, thresholds_forest = roc_curve(y_train_5,y_scores_forest)
 ```
 
-Ahora ya podemos gráficar la curva ROC
+Ahora ya podemos graficar la curva ROC
 
 ```python
 plt.figure(figsize=(8, 6))
@@ -523,7 +921,31 @@ svm_clf.fit(X_train[:1000], y_train[:1000])
 svm_clf.predict([some_digit])
 ```
 
-|[5]|dtype=uint8|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<tbody>
+  <tr>
+    <td>[5]</td>
+    <td>dtype=uint8</td>
+  </tr>
+</tbody>
+</table>
+</div>
+
 
 El modelo clasificó satisfactoriamente el dígito, ahora imprimiremos los puntajes
 de cada clase
@@ -533,8 +955,52 @@ some_digit_scores = svm_clf.decision_function([some_digit])
 some_digit_scores
 ```
 
-|0|1|2|3|4|5|6|7|8|9|
-|2.81|7.09|3.82|0.79|5.88|9.29|1.79|8.10|-0.22|4.83|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<thead>
+  <tr>
+    <th>0</th>
+    <th>1</th>
+    <th>2</th>
+    <th>3</th>
+    <th>4</th>
+    <th>5</th>
+    <th>6</th>
+    <th>7</th>
+    <th>8</th>
+    <th>9</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>2.81</td>
+    <td>7.09</td>
+    <td>3.82</td>
+    <td>0.79</td>
+    <td>5.88</td>
+    <td>9.29</td>
+    <td>1.79</td>
+    <td>8.10</td>
+    <td>-0.22</td>
+    <td>4.83</td>
+  </tr>
+</tbody>
+</table>
+</div>
 
 A simple vista podemos comprobar que la clase con un mayor puntaje es el 5
 
@@ -548,11 +1014,57 @@ ovr_clf.fit(X_train[:1000], y_train[:1000])
 ovr_clf.predict([some_digit])
 ```
 
-|[5]|dtype=uint8|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<tbody>
+  <tr>
+    <td>[5]</td>
+    <td>dtype=uint8</td>
+  </tr>
+</tbody>
+</table>
+</div>
 
 Lo predijo satisfactoriamente como 5, ahora veamos cuantos estimadores utilizó
 
-|len(ovr_clf.estimators_)|10|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<tbody>
+  <tr>
+    <th>len(ovr_clf.estimators_)</th>
+    <td>10</td>
+  </tr>
+</tbody>
+</table>
+</div>
 
 Como lo vimos anteriormente usaría 10 con la estrategía OvA
 
@@ -563,7 +1075,30 @@ forest_clf.fit(X_train, y_train)
 forest_clf.predict([some_digit])
 ```
 
-|[5]|dtype=uint8|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<tbody>
+  <tr>
+    <td>[5]</td>
+    <td>dtype=uint8</td>
+  </tr>
+</tbody>
+</table>
+</div>
 
 Miraremos la probabilidad de pertenencia a cada clase
 
@@ -571,8 +1106,52 @@ Miraremos la probabilidad de pertenencia a cada clase
 forest_clf.predict_proba([some_digit])
 ```
 
-|0|1|2|3|4|5|6|7|8|9|
-|0.00|0.00|0.01|0.08|0.00|0.90|0.00|0.00|0.00|0.01|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<thead>
+  <tr>
+    <th>0</th>
+    <th>1</th>
+    <th>2</th>
+    <th>3</th>
+    <th>4</th>
+    <th>5</th>
+    <th>6</th>
+    <th>7</th>
+    <th>8</th>
+    <th>9</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>0.00</td>
+    <td>0.00</td>
+    <td>0.01</td>
+    <td>0.08</td>
+    <td>0.00</td>
+    <td>0.90</td>
+    <td>0.00</td>
+    <td>0.00</td>
+    <td>0.00</td>
+    <td>0.01</td>
+  </tr>
+</tbody>
+</table>
+</div>
 
 La clase que tiene una mayor probabilidad es el 5, por lo tanto el algoritmo elige
 esa clase.
@@ -583,7 +1162,32 @@ Para medir el rendimiento de los clasificadores utilizaremos cross validation
 cross_val_score(sgd_clf, X_train, y_train, cv=3, scoring="accuracy")
 ```
 
-|0.87365|0.85835|0.8689|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<tbody>
+  <tr>
+    <td>0.87365</td>
+    <td>0.85835</td>
+    <td>0.8689</td>
+  </tr>
+</tbody>
+</table>
+</div>
+
 
 El algoritmo SGD rindió con un puntaje aproximado de 86% de exactitud
 
@@ -593,7 +1197,32 @@ Ahora miraremos el puntaje del bosque aleatorio
 cross_val_score(forest_clf, X_train, y_train, cv=3, scoring="accuracy")
 ```
 
-|0.9646|0.96255|0.9666|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<tbody>
+  <tr>
+    <td>0.9646</td>
+    <td>0.96255</td>
+    <td>0.9666</td>
+  </tr>
+</tbody>
+</table>
+</div>
+
 
 El bosque aleatorio rindió mucho mejor que el SGD
 
@@ -611,7 +1240,32 @@ Ahora que están estandarizados podemos volver a aplicar la validación
 cross_val_score(sgd_clf, X_train_scaled, y_train, cv=3, scoring="accuracy")
 ```
 
-|0.8983|0.891|0.9018|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<tbody>
+  <tr>
+    <td>0.8983</td>
+    <td>0.891</td>
+    <td>0.9018</td>
+  </tr>
+</tbody>
+</table>
+</div>
+
 
 El algoritmo SGD mejoró un poco
 
@@ -619,7 +1273,31 @@ El algoritmo SGD mejoró un poco
 cross_val_score(forest_clf, X_train_scaled, y_train, cv=3, scoring="accuracy")
 ```
 
-|0.96445|0.96255|0.96645|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<tbody>
+  <tr>
+    <td>0.96445</td>
+    <td>0.96255</td>
+    <td>0.96645</td>
+  </tr>
+</tbody>
+</table>
+</div>
 
 Mientras que el bosque no se vió muy afectado
 
@@ -635,16 +1313,146 @@ conf_mx = confusion_matrix(y_train, y_train_pred)
 conf_mx
 ```
 
-|5840|   1|   8|   2|   4|   9|  20|   1|  35|   3|
-|   1|6634|  43|  12|  13|   5|   6|  13|  12|   3|
-|  26|  12|5749|  29|  32|   5|  20|  37|  42|   6|
-|   7|   7|  93|5809|   3|  63|   7|  49|  61|  32|
-|  12|  13|  14|   1|5643|   0|  29|  14|  17|  99|
-|  20|   9|   9|  65|  13|5195|  53|   6|  32|  19|
-|  25|  11|   5|   0|  12|  45|5805|   0|  15|   0|
-|   4|  24|  58|   6|  37|   1|   0|6037|  11|  87|
-|   9|  35|  44|  53|  26|  52|  27|   5|5524|  76|
-|  21|  10|  13|  76|  75|  15|   3|  58|  45|5633|
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<tbody>
+  <tr>
+    <td>5840</td>
+    <td>1</td>
+    <td>8</td>
+    <td>2</td>
+    <td>4</td>
+    <td>9</td>
+    <td>20</td>
+    <td>1</td>
+    <td>35</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>6634</td>
+    <td>43</td>
+    <td>12</td>
+    <td>13</td>
+    <td>5</td>
+    <td>6</td>
+    <td>13</td>
+    <td>12</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>26</td>
+    <td>12</td>
+    <td>5749</td>
+    <td>29</td>
+    <td>32</td>
+    <td>5</td>
+    <td>20</td>
+    <td>37</td>
+    <td>42</td>
+    <td>6</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>7</td>
+    <td>93</td>
+    <td>5809</td>
+    <td>3</td>
+    <td>63</td>
+    <td>7</td>
+    <td>49</td>
+    <td>61</td>
+    <td>32</td>
+  </tr>
+  <tr>
+    <td>12</td>
+    <td>13</td>
+    <td>14</td>
+    <td>1</td>
+    <td>5643</td>
+    <td>0</td>
+    <td>29</td>
+    <td>14</td>
+    <td>17</td>
+    <td>99</td>
+  </tr>
+  <tr>
+    <td>20</td>
+    <td>9</td>
+    <td>9</td>
+    <td>65</td>
+    <td>13</td>
+    <td>5195</td>
+    <td>53</td>
+    <td>6</td>
+    <td>32</td>
+    <td>19</td>
+  </tr>
+  <tr>
+    <td>25</td>
+    <td>11</td>
+    <td>5</td>
+    <td>0</td>
+    <td>12</td>
+    <td>45</td>
+    <td>5805</td>
+    <td>0</td>
+    <td>15</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>24</td>
+    <td>58</td>
+    <td>6</td>
+    <td>37</td>
+    <td>1</td>
+    <td>0</td>
+    <td>6037</td>
+    <td>11</td>
+    <td>87</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>35</td>
+    <td>44</td>
+    <td>53</td>
+    <td>26</td>
+    <td>52</td>
+    <td>27</td>
+    <td>5</td>
+    <td>5524</td>
+    <td>76</td>
+  </tr>
+  <tr>
+    <td>21</td>
+    <td>10</td>
+    <td>13</td>
+    <td>76</td>
+    <td>75</td>
+    <td>15</td>
+    <td>3</td>
+    <td>58</td>
+    <td>45</td>
+    <td>5633</td>
+  </tr>
+</tbody>
+</table>
+</div>
 
 Los números que se encuentran en la diagonal principal son aquellos que clasificó
 correctamente.
@@ -741,7 +1549,31 @@ tomamos como ejemplo
 knn_clf.predict([some_digit])
 ```
 
-|False|True|
+
+<div class="table-wrapper">
+
+  <style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+  </style>
+<table>
+<tbody>
+  <tr>
+    <td>False</td>
+    <td>True</td>
+  </tr>
+</tbody>
+</table>
+</div>
 
 Como resultado nos dio un vector con dos valores booleanos, el primero nos dice
 si es un valor mayor que 6, ya que 5 es menor que 6 nos dio Falso; El segundo
