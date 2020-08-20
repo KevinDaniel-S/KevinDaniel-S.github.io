@@ -4,9 +4,13 @@ title:  "Proyecto Clasificación"
 date:   2020-08-19 19:35:00 -0500
 categories: Machine Learning
 ---
-Modelo de machine learning que distingue números escritos a mano
+Modelo de machine learning que distingue números escritos a mano de un conjunto de
+datos llamado mnist con 70,000 imágenes, cada una representa un número del 0 al 9, 
+están en una resolución 28x28
 
 <!--more-->
+
+Podemos descargar el conjunto de datos mnist desde sklearn.
 
 ```python
 from sklearn.datasets import fetch_openml
@@ -15,6 +19,9 @@ mnist.keys()
 ```
 
 |dict_keys|data|target|frame|feature_names|target_names|DESCR|details|categories|url|
+
+Separaremos los vectores que contienen la información de cada imagen de la etiqueta que
+los identifica.
 
 ```python
 X, y = mnist["data"], mnist["target"]
@@ -25,7 +32,9 @@ print(y.shape)
 |X.shape|(70000,784)|
 |y.shape|(70000,)|
 
-
+Ya que cada imagen está en forma de vector, podemos redimensionarlo de tal forma 
+que tenga las proporciones adecuadas, en este caso es una matriz 28x28, una vez
+tenga la forma correcta podemos crear la imagen, miremos la primera.
 
 ```python
 import matplotlib as mpl
@@ -41,11 +50,19 @@ plt.show()
 
 ![png](\images\classification\output_3_0.png)
 
+En este caso parece ser un 5, si le preguntamos al conjunto de datos por su valor,
+podemos verificar su valor.
+
 |y[0]|'5'|
+
+Al parecer realmente era un 5, pero está en un formato de cadena texto, para
+facilitarnos las cosas pasaremos las etiquetas "y" a números enteros.
 
 ```python
 y = y.astype(np.uint8)
 ```
+
+Podemos crear una función que directamente nos cree la imagen del número deseado.
 
 ```python
 def plot_digit(data):
@@ -55,6 +72,7 @@ def plot_digit(data):
     plt.axis("off")
 ```
 
+También crearemos una función que nos permita crear varias imágenes juntas.
 
 ```python
 def plot_digits(instances, images_per_row=10, **options):
@@ -73,6 +91,7 @@ def plot_digits(instances, images_per_row=10, **options):
     plt.axis("off")
 ```
 
+Mostraremos los primeros 100 números que están en el conjunto de datos
 
 ```python
 plt.figure(figsize=(9,9))
@@ -81,10 +100,12 @@ plot_digits(example_images, images_per_row=10)
 plt.show()
 ```
 
-
 ![png](\images\classification\output_8_0.png)
 
-
+Ahora separaremos el conjunto de entrenamiento del conjunto de prueba, ya que el
+conjunto de datos ya se encuentra revuelto no hay necesidad de dividirlo aleatoriamente
+y simplemente podemos partirlo en dos, la primera parte tendrá 60,000 imágenes y la
+segunda tendrá las 10,000 restantes.
 
 ```python
 X_train, X_test, y_train, y_test = X[:60000], X[60000:], y[:60000], y[60000:]
@@ -92,12 +113,15 @@ X_train, X_test, y_train, y_test = X[:60000], X[60000:], y[:60000], y[60000:]
 
 # Binary classifier 
 
+Comenzaremos por crear un clasificador binario que distinga a los números que son 5 
+de los que no.
 
 ```python
 y_train_5 = (y_train == 5)
 y_test_5 = (y_test == 5)
 ```
 
+Para empezar entrenaremos el algoritmo del descenso de gradiente estocástico.
 
 ```python
 from sklearn.linear_model import SGDClassifier
@@ -106,39 +130,18 @@ sgd_clf = SGDClassifier(max_iter=1000, tol=1e-3, random_state=42)
 sgd_clf.fit(X_train, y_train_5)
 ```
 
-    SGDClassifier(alpha=0.0001, average=False, class_weight=None,
-                  early_stopping=False, epsilon=0.1, eta0=0.0, fit_intercept=True,
-                  l1_ratio=0.15, learning_rate='optimal', loss='hinge',
-                  max_iter=1000, n_iter_no_change=5, n_jobs=None, penalty='l2',
-                  power_t=0.5, random_state=42, shuffle=True, tol=0.001,
-                  validation_fraction=0.1, verbose=0, warm_start=False)
+Ahora que lo tenemos entrenado podemos probarlo con el número que ya conocemos.
 
 |sgd_clf.predict([some_digit])|array([ True])|
 
+Al parecer lo identificó correctamente como un 5
+
 # Medir el rendimiento
 
-
-```python
-from sklearn.model_selection import StratifiedKFold
-from sklearn.base import clone
-
-skfolds = StratifiedKFold(n_splits=3, random_state=42, shuffle=True)
-
-for train_index, test_index in skfolds.split(X_train, y_train_5):
-    clone_clf = clone(sgd_clf)
-    X_train_folds = X_train[train_index]
-    y_train_folds = y_train_5[train_index]
-    X_test_fold = X_train[test_index]
-    y_test_fold = y_train_5[test_index]
-    clone_clf.fit(X_train_folds, y_train_folds)
-    y_pred = clone_clf.predict(X_test_fold)
-    n_correct = sum(y_pred == y_test_fold)
-    print(n_correct / len(y_pred))
-```
-
-|0.9669|
-|0.91625|
-|0.96785|
+Intentaremos verificar su rendimiento, para eso usarémos cross validation, que
+dividirá el conjunto de entrenamiento en 3 partes, entrenará al modelo con dos
+tercias partes del conjunto y lo validará con la parte restante, esto lo hará
+3 veces, cada vez dejando una parte diferente para la validación.
 
 
 ```python
@@ -147,6 +150,10 @@ cross_val_score(sgd_clf, X_train, y_train_5, cv=3, scoring="accuracy")
 ```
 
 |0.95035|0.96035|0.9604|
+
+Al parecer acertó más del 95% de veces en las tres ocasiones que se probó el
+modelo, sin embargo no podemos emocionarnos tan fácilmente, antes tenemos que
+comprobar un clasificador tonto, que clasificará a todos los números como no 5.
 
 ```python
 from sklearn.base import BaseEstimator
@@ -158,6 +165,7 @@ class Never5Classifier(BaseEstimator):
         return np.zeros((len(X), 1), dtype=bool)
 ```
 
+Intentemos probar su rendimiento.
 
 ```python
 never_5_clf = Never5Classifier()
@@ -166,8 +174,15 @@ cross_val_score(never_5_clf, X_train, y_train_5, cv=3, scoring="accuracy")
 
 |0.91125|0.90855|0.90915|
 
+
+Al parecer acertó más del 90% de ocasiones, solo fallando cuando el número realmente vale
+5, esto demuestra que no podemos fiarnos ciegamente de la exactitud.
+
 ## Matriz de confusión
 
+Algo que nos permitirá evaluar mejor el rendimiento son las matrices de confusión,
+esta vez usaremos un algoritmo similar al anterior, pero en lugar de darnos un
+puntaje, nos dará las predicciones.
 
 ```python
 from sklearn.model_selection import cross_val_predict
@@ -175,6 +190,7 @@ from sklearn.model_selection import cross_val_predict
 y_train_pred = cross_val_predict(sgd_clf, X_train, y_train_5, cv=3)
 ```
 
+Ahora que tenemos las predicciones podemos crear la matriz de confusión
 
 ```python
 from sklearn.metrics import confusion_matrix
@@ -182,8 +198,25 @@ from sklearn.metrics import confusion_matrix
 confusion_matrix(y_train_5, y_train_pred)
 ```
 
-|53892|687|
-|1891|3530|
+|Real\Predicción|No 5|5|
+|No 5|53892|687|
+|5|1891|3530|
+
+La primera fila representa a los números que no son 5, mientras que la segunda fila
+representa a los números que sí son 5; La primera columna representa los  números que 
+el modelo interpretó como no 5 y la segunda columna representa a los números que el 
+modelo interpretó como 5.
+
+53,892 números fueron clasificados correctamente como no 5, llamados verdaderos negativos.
+
+3,530 números fueron clasificados correctamente como 5, llamados verdaderos positivos.
+
+687 números fueron clasificados incorrectamente como 5, llamados falsos positivos.
+
+1891 números fueron clasificados incorrectamente como no 5, llamados falsos negativos.
+
+Un clasificador perfecto solo tendría verdaderos positivos o verdaderos negativos, por
+lo que solo tendría valores diferentes de 0 en su diagonal principal.
 
 ## Precision and Recall
 
