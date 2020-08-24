@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Proyecto Clasificación"
+title:  "Números a mano"
 date:   2020-08-20 13:09:00 -0500
 categories: Machine Learning
 ---

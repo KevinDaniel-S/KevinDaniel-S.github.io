@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Proyecto de punta a punta del libro Hands on machine learning"
+title:  "Casas california"
 date:   2020-08-17 20:12:00 -0500
 categories: Machine Learning
 ---
