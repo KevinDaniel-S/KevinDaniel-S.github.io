@@ -2,7 +2,7 @@
 layout: post
 title:  "Casas de california"
 date:   2020-08-17 20:12:00 -0500
-categories: Machine Learning
+category: Machine_Learning
 ---
 
 Modelo de Machine Learning que ayuda a predecir el valor de una casa en
