@@ -287,3 +287,5 @@ de variables.
 
 ![png](\images\felicidad\output_81_0.png)
 
+Para ver el repositorio completo [¡Click Aquí!](https://github.com/KevinDaniel-S/MachineLearning/tree/master/Reporte%20de%20la%20felicidad%20mundial)
+
