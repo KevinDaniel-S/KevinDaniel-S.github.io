@@ -13,17 +13,10 @@ Desempleo en la UE
 {% include Desempleo/img2.html %}
 {% include Desempleo/img3.html %}
 {% include Desempleo/img4.html %}
-
-
 {% include Desempleo/img10.html %}
 {% include Desempleo/img11.html %}
-
 {% include Desempleo/img13.html %}
-
 {% include Desempleo/img15.html %}
-
 {% include Desempleo/img17.html %}
-
 {% include Desempleo/img19.html %}
-
 {% include Desempleo/img21.html %}
