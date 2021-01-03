@@ -357,7 +357,15 @@ def execute(methods):
 
 ### Resultado final
 
+#### Estado final
 ![Cubo resuelto](\images\rubik\Solved.png)
 
+#### Estado deshecho
 ![Cubo deshecho](\images\rubik\Unsolved.png)
+
+#### Deshacer cubo
+![Deshacer cubo](\images\rubik\mix.gif)
+
+#### Armar cubo
+![Armar cubo](\images\rubik\solving.gif)
 
