@@ -204,6 +204,17 @@
   flex-wrap: wrap;
 }
 
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row .col{
+  margin: 1%;
+  width: 30%;
+  flex-grow: 1;  
+}
+
 .flexbox .col {
   margin: 1%;
   width: 30%;
