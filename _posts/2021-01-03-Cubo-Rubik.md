@@ -355,17 +355,17 @@ def execute(methods):
       time.sleep(0.25)
 ```
 
-### Resultado final
+## Resultado final
 
-#### Estado final
+### Estado final
 ![Cubo resuelto](\images\rubik\Solved.png)
 
-#### Estado deshecho
+### Estado deshecho
 ![Cubo deshecho](\images\rubik\Unsolved.png)
 
-#### Deshacer cubo
+### Deshacer cubo
 ![Deshacer cubo](\images\rubik\mix.gif)
 
-#### Armar cubo
+### Armar cubo
 ![Armar cubo](\images\rubik\solving.gif)
 
