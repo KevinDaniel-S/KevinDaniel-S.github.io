@@ -196,24 +196,12 @@ Ese diccionario se utilizar√° para crear el string que contiene la representaci√
 
 ```python
   def __repr__(self):
+    faces = [self.up, self.left, self.center, 
+             self.right, self.back, self.down]
     result = ""
-    for color in self.up:
-      result += colors[color]
-      result += " "
-    for color in self.left:
-      result += colors[color]
-      result += " "
-    for color in self.center:
-      result += colors[color]
-      result += " "
-    for color in self.right:
-      result += colors[color]
-      result += " "
-    for color in self.back:
-      result += colors[color]
-      result += " "
-    for color in self.down:
-      result += colors[color]
+    for face in faces:
+      for color in face:
+        result += colors[color]
       result += " "
     return result
 ```
