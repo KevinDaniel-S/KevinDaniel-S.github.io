@@ -109,7 +109,7 @@ restantes pertenecen a las caras adyacentes, dos por las esquinas y otra por el 
     self.permutate(0, 2, 7, 5, face=self.up)
     self.permutate(1, 4, 6, 3, face=self.up)
 
-    # Giro del centro
+    # Giro de la arista
     self.permutate((self.back, 1), (self.right, 1), 
       (self.center, 1), (self.left, 1)) 
 
