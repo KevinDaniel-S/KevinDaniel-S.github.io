@@ -2,7 +2,7 @@
 layout: post
 title:  "Cubo de Rubik"
 date:   2021-01-03 13:21:00 -0600
-category: ProblemSolver
+category: Problem-Solver
 ---
 
 Modelo de un cubo de Rubik Interactivo que puede resolverse sin ayuda de un ser humano,

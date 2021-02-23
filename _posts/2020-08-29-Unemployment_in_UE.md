@@ -2,7 +2,7 @@
 layout: post
 title:  "Desempleo en la Unión Europea"
 date:   2020-08-30 18:01:00 -0500
-category: Machine_Learning
+category: Data-Visualization
 ---
 
 Estadísticas de desempleo por sexo y edad de la Unión Europea

@@ -2,7 +2,7 @@
 layout: post
 title:  "Índice mundial de la felicidad"
 date:   2020-08-26 14:19:00 -0500
-category: Machine_Learning
+category: Data-Visualization
 ---
 
 El índice global de felicidad es una publicación anual de la Red de Soluciones

@@ -2,7 +2,7 @@
 layout: post
 title:  "Números a mano"
 date:   2020-08-20 13:09:00 -0500
-category: Machine_Learning
+category: Machine-Learning
 ---
 Modelo de machine learning que distingue números escritos a mano de un conjunto de
 datos llamado mnist con 70,000 imágenes, cada una representa un número del 0 al 9, 
